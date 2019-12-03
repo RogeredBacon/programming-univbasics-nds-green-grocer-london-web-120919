@@ -19,12 +19,9 @@ def consolidate_cart(cart)
   #
   # REMEMBER: This returns a new Array that represents the cart. Don't merely
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
-  require 'pp'
-  pp cart
   i = 0
   cart_array = []
   while i < cart.length
-  pp find_item_by_name_in_collection(cart[i][:item], cart_array)
     if !find_item_by_name_in_collection(cart[i][:item], cart_array)
       cart_array.push(cart[i])
       cart_array[-1][:count] = 1
@@ -39,7 +36,6 @@ def consolidate_cart(cart)
     end
     i += 1
   end
-  pp cart_array
   cart_array
 end
 
