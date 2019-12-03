@@ -50,7 +50,6 @@ def apply_coupons(cart, coupons)
   # REMEMBER: This method **should** update cart
   i = 0
   while i < coupons.length
-    if find_item_by_name_in_collection(coupons[i][:item], cart)
       cart_item_i = 0
       while cart_item_i < cart.length
         if cart[cart_item_i][:item] == coupons[i][:item] && cart[cart_item_i][:count] >= coupons[i][:num]
@@ -66,7 +65,6 @@ def apply_coupons(cart, coupons)
         end
       cart_item_i += 1
       end
-    end
     i += 1
   end
 end
