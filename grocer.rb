@@ -58,6 +58,10 @@ def apply_coupons(cart, coupons)
           cart[-1][:price] = coupon[i][:cost] / coupon[i][:num]
           cart[-1][:clearance] = cart[cart_item_i][:clearance]
           cart[-1][:count] = coupon[i][:num]
+          
+          if cart[cart_item_i][:item] == coupon[i][:item] && cart[cart_item_i][:count] <= 0
+            
+          end
         end
       cart_item_i += 1
       end
