@@ -3,14 +3,14 @@ def find_item_by_name_in_collection(name, collection)
   #
   # Consult README for inputs and outputs
   i = 0
-  item = nil
+  item_hash = nil
   while i < collection.size
     if collection[i][:item] == name
-      item = collection[i]
+      item_hash = collection[i]
     end
     i += 1
   end
-  item
+  item_hash
 end
 
 def consolidate_cart(cart)
