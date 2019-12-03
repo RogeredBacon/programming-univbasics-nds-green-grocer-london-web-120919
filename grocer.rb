@@ -23,22 +23,11 @@ def consolidate_cart(cart)
   i = 0
   cart_array = []
   while i < cart.length
-    cart_item_i = 0
-    
-    while cart_item_i < cart_array.length
-      if cart_array[cart_item_i][cart[i][:item]]
-        cart_array[cart_item_i][:count] += 1
-      end
-      cart_item_i += 1
-    end
-    
-    if cart_array[cart_item_i][cart[i][:item]]
-        cart_array[cart_item_i][:count] += 1
-      end
-        cart_array[cart_item_i][:item] = cart[i][:item]
-        cart_array[cart_item_i][:price] = cart[i][:price]
-        cart_array[cart_item_i][:clearance] = cart[i][:clearance]
-        cart_array[cart_item_i][:count] = 1
+    if !find_item_by_name_in_collection(cart[i][:name], cart_array)
+      cart_array.push(cart[i])
+      cart_array[-1][:count] = 1
+    else
+      
   end
   
 end
