@@ -23,7 +23,11 @@ def consolidate_cart(cart)
   i = 0
   cart_array = []
   while i < cart.length
-    if cart_array[i][]
+    cart_item_i = 0
+    while cart_item_i < cart_array.length
+      if cart_array[cart_item_i][:item]
+        
+    end
   end
   
 end
