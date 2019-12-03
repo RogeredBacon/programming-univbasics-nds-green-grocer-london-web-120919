@@ -33,6 +33,7 @@ def consolidate_cart(cart)
           cart_array[cart_item_i][:count] += 1
         end
       cart_item_i += 1
+      end
     end
     i += 1
   end
