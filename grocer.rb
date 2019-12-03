@@ -19,7 +19,8 @@ def consolidate_cart(cart)
   #
   # REMEMBER: This returns a new Array that represents the cart. Don't merely
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
-  print cart
+  require 'pp'
+  pp cart
   i = 0
   cart_array = []
   while i < cart.length
@@ -37,7 +38,7 @@ def consolidate_cart(cart)
     end
     i += 1
   end
-  print cart_array
+  pp cart_array
   cart_array
 end
 
