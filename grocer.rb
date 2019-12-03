@@ -3,10 +3,12 @@ def find_item_by_name_in_collection(name, collection)
   #
   # Consult README for inputs and outputs
   i = 0
-  item_hash = nil
+  item_hash = {}
   while i < collection.size
     if collection[i][:item] == name
-      item_hash = collection[i]
+      return collection[i]
+    else
+      item_hash = nil
     end
     i += 1
   end
