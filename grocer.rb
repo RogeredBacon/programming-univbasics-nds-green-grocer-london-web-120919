@@ -24,6 +24,7 @@ def consolidate_cart(cart)
   i = 0
   cart_array = []
   while i < cart.length
+  pp find_item_by_name_in_collection(cart[i][:name], cart_array)
     if !find_item_by_name_in_collection(cart[i][:name], cart_array)
       cart_array.push(cart[i])
       cart_array[-1][:count] = 1
