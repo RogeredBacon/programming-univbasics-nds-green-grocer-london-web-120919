@@ -19,7 +19,7 @@ def consolidate_cart(cart)
   #
   # REMEMBER: This returns a new Array that represents the cart. Don't merely
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
-  
+  print cart
   i = 0
   cart_array = []
   while i < cart.length
@@ -29,7 +29,7 @@ def consolidate_cart(cart)
     else
       cart_item_i = 0
       while cart_item_i < cart_array.length
-        if cart_array[cart_item_i][:item] === cart[i][:item]
+        if cart_array[cart_item_i][:item] == cart[i][:item]
           cart_array[cart_item_i][:count] += 1
         end
       cart_item_i += 1
@@ -37,6 +37,7 @@ def consolidate_cart(cart)
     end
     i += 1
   end
+  print cart_array
   cart_array
 end
 
