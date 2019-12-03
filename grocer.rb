@@ -2,7 +2,8 @@ def find_item_by_name_in_collection(name, collection)
   # Implement me first!
   #
   # Consult README for inputs and outputs
-  
+  require 'pp'
+  pp collection
   i = 0
   item = nil
   while i < collection.length
@@ -40,8 +41,8 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-   require 'pp'
-   
+  # require 'pp'
+  # pp cart
   # print 'break'
   # pp coupons
   # Consult README for inputs and outputs
@@ -49,13 +50,12 @@ def apply_coupons(cart, coupons)
   # REMEMBER: This method **should** update cart
   i = 0
   while i < coupons.length
-  pp cart
     if find_item_by_name_in_collection(coupons[i][:item], cart)
       cart_item_i = 0
       while cart_item_i < cart.length
         if cart[cart_item_i][:item] == coupons[i][:item] && cart[cart_item_i][:count] >= coupons[i][:num]
           cart[cart_item_i][:count] -= coupons[i][:num]
-          cart[-1][:item] = coupons[i][:item] + 'W/COUPON'
+          cart[-1][:item] = coupons[i][:item] + ' W/COUPON'
           cart[-1][:price] = coupons[i][:cost] / coupons[i][:num]
           cart[-1][:clearance] = cart[cart_item_i][:clearance]
           cart[-1][:count] = coupons[i][:num]
