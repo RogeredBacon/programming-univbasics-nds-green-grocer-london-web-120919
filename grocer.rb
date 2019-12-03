@@ -26,9 +26,9 @@ def consolidate_cart(cart)
     cart_item_i = 0
     while cart_item_i < cart_array.length
       if cart_array[cart_item_i][cart[i][:item]]
-        cart_array[cart_item_i][:item] += 1
+        cart_array[cart_item_i][:count] += 1
       else
-        cart_array[cart_item_i][:item] = 1
+        cart_array[cart_item_i][:item] = cart[i][:item]
       end
       cart_item_i += 1
     end
