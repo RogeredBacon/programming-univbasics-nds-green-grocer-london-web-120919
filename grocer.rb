@@ -40,8 +40,8 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  # require 'pp'
-  # pp cart
+   require 'pp'
+   pp cart
   # print 'break'
   # pp coupons
   # Consult README for inputs and outputs
