@@ -61,7 +61,7 @@ def apply_coupons(cart, coupons)
           cart[-1][:count] = coupons[i][:num]
           
           if cart[cart_item_i][:item] == coupons[i][:item] && cart[cart_item_i][:count] <= 0
-            cart.delete_at[cart_item_i]
+            cart.delete_at(cart_item_i)
           end
         end
       cart_item_i += 1
