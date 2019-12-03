@@ -46,7 +46,25 @@ def apply_coupons(cart, coupons)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
-
+  i = 0
+  while i < coupons.length
+      cart_item_i = 0
+      while cart_item_i < cart.length
+        if cart[cart_item_i][:item] == coupons[i][:item] && cart[cart_item_i][:count] >= coupons[i][:num]
+          cart[cart_item_i][:count] -= coupons[i][:num]
+          cart[-1][:item] = coupons[i][:item] + ' W/COUPON'
+          cart[-1][:price] = coupons[i][:cost] / coupons[i][:num]
+          cart[-1][:clearance] = cart[cart_item_i][:clearance]
+          cart[-1][:count] = coupons[i][:num]
+          
+          if cart[cart_item_i][:item] == coupons[i][:item] && cart[cart_item_i][:count] <= 0
+            cart.delete_at(cart_item_i)
+          end
+        end
+      cart_item_i += 1
+      end
+    i += 1
+  end
 end
 
 def apply_clearance(cart)
