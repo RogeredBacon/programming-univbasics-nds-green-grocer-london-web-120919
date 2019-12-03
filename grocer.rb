@@ -41,7 +41,7 @@ end
 
 def apply_coupons(cart, coupons)
    require 'pp'
-   pp cart
+   
   # print 'break'
   # pp coupons
   # Consult README for inputs and outputs
@@ -49,6 +49,7 @@ def apply_coupons(cart, coupons)
   # REMEMBER: This method **should** update cart
   i = 0
   while i < coupons.length
+  pp cart
     if find_item_by_name_in_collection(coupons[i][:item], cart)
       cart_item_i = 0
       while cart_item_i < cart.length
